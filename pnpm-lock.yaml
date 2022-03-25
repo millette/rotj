@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   meow: ^10.1.2
-  read-pkg-up: ^8.0.0
+  read-pkg-up: ~8.0.0
   sharp: ^0.30.3
 
 dependencies:
