@@ -1,0 +1,16 @@
+{
+  "name": "rotj",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Rotate jpeg according to exif.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "meow": "^10.1.2",
+    "read-pkg-up": "^8.0.0",
+    "sharp": "^0.30.3"
+  }
+}
