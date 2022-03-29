@@ -1,11 +1,15 @@
 {
   "name": "rotj",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Rotate jpeg according to exif.",
   "main": "index.js",
   "bin": "cli.js",
-  "keywords": ["jpeg", "rotate", "image"],
+  "keywords": [
+    "jpeg",
+    "rotate",
+    "image"
+  ],
   "dependencies": {
     "meow": "^10.1.2",
     "read-pkg-up": "~8.0.0",
