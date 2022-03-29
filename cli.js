@@ -15,6 +15,13 @@ const cli = meow(`
   For input.jpg, the image is rotated and called input-rotj.jpg.
 
   Usage: ${name} *.jpg [--nodir] [--overwrite]
+
+  Options:
+
+  --nodir, -n      Convert files to local directory
+  --overwrite, -o  Overwrite output file
+  --help, -h       This help
+  --version, -v    Version
   `,{
     importMeta: import.meta,
     allowUnknownFlags: false,
@@ -29,6 +36,7 @@ const cli = meow(`
       },
       nodir: {
         type: "boolean",
+        alias: "n"
       },
       overwrite: {
         type: "boolean",
@@ -38,7 +46,13 @@ const cli = meow(`
   }
 )
 
-if (!cli.input.lengh) cli.showHelp()
+if (!cli.input.length) cli.showHelp()
 
-const all = await rotj(cli)
-console.error("ALL", all)
+const fix = (x) => {
+  if (x instanceof Error) return x.toString()
+  const { input, output, transform, elapsed } = x
+  return `Rotate ${input} to ${output}: ${transform} in ${elapsed}ms`
+}
+
+const out = (x) => x.map(fix).join("\n")
+rotj(cli).then(out).then(console.log).catch(console.error)
