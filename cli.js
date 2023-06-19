@@ -2,13 +2,13 @@
 
 // npm
 import meow from "meow"
-import { readPackageUpAsync } from 'read-pkg-up'
+import { readPackageUp } from 'read-pkg-up'
 
 // self
 import { rotj } from "./index.js"
 
 // readPackageUp with version 9.1.0
-const { packageJson: { version, name }} = await readPackageUpAsync()
+const { packageJson: { version, name }} = await readPackageUp()
 
 const cli = meow(`
   ${name} v${version}  
