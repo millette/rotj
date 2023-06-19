@@ -28,19 +28,19 @@ const cli = meow(`
     flags: {
       help: {
         type: "boolean",
-        alias: "h",
+        shortFlag: "h",
       },
       version: {
         type: "boolean",
-        alias: "v",
+        shortFlag: "v",
       },
       nodir: {
         type: "boolean",
-        alias: "n"
+        shortFlag: "n"
       },
       overwrite: {
         type: "boolean",
-        alias: "o",
+        shortFlag: "o",
       }
     }
   }
