@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+// node
+import { dirname } from "node:path"
+
 // npm
 import meow from "meow"
 import { readPackageUp } from 'read-pkg-up'
@@ -7,8 +10,7 @@ import { readPackageUp } from 'read-pkg-up'
 // self
 import { rotj } from "./index.js"
 
-// readPackageUp with version 9.1.0
-const { packageJson: { version, name }} = await readPackageUp()
+const { packageJson: { version, name }} = await readPackageUp({ cwd: dirname(new URL(import.meta.url).pathname) })
 
 const cli = meow(`
   ${name} v${version}  
