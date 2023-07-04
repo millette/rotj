@@ -1,6 +1,6 @@
 {
   "name": "rotj",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Rotate jpeg according to exif.",
   "engines": {
