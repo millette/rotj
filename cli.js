@@ -5,7 +5,7 @@ import { dirname } from "node:path"
 
 // npm
 import meow from "meow"
-import { readPackageUp } from 'read-pkg-up'
+import { readPackageUp } from 'read-package-up'
 
 // self
 import { rotj } from "./index.js"
@@ -13,7 +13,7 @@ import { rotj } from "./index.js"
 const { packageJson: { version, name }} = await readPackageUp({ cwd: dirname(new URL(import.meta.url).pathname) })
 
 const cli = meow(`
-  ${name} v${version}  
+  ${name} v${version}
   For input.jpg, the image is rotated and called input-rotj.jpg.
 
   Usage: ${name} *.jpg [--nodir] [--overwrite]
